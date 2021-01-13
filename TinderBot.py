@@ -119,8 +119,9 @@ def main():
         b.login()
     except:
         print("Error during Login")
+        exit()
 
-    for i in range(50):
+    for _ in range(50):
         try:
             b.driver.refresh()
             sleep(10)
@@ -135,7 +136,7 @@ def main():
             sleep(2)
         except:
             try:
-            # No thanks
+            # No thanks button
                 b.driver.find_element_by_xpath('//*[@id="modal-manager"]/div/div/button[2]').click()
             except Exception as e:
                 try:
